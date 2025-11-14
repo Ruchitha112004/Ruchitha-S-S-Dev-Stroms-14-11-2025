@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skills — Full Page Layout</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="R.jpeg" type="image/x-icon">
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <h1>Skills & Proficiency</h1>
+      <p class="sub">Technologies I use and proficiency levels — bigger, clearer and full-page layout.</p>
+    </header>
+
+    <!-- TOP: Skills area -->
+    <section class="skills-top">
+      <div class="rings" aria-hidden="false">
+        <div class="ring" style="--p:92;">
+          <div class="ring-inner">
+            <strong>UI</strong>
+            <span>92%</span>
+          </div>
+        </div>
+
+        <div class="ring" style="--p:86;">
+          <div class="ring-inner">
+            <strong>UX</strong>
+            <span>86%</span>
+          </div>
+        </div>
+
+        <div class="ring" style="--p:78;">
+          <div class="ring-inner">
+            <strong>JS</strong>
+            <span>78%</span>
+          </div>
+        </div>
+
+        <div class="ring" style="--p:74;">
+          <div class="ring-inner">
+            <strong>React</strong>
+            <span>74%</span>
+          </div>
+        </div>
+
+        <div class="ring" style="--p:68;">
+          <div class="ring-inner">
+            <strong>Node</strong>
+            <span>68%</span>
+          </div>
+        </div>
+
+        <div class="ring" style="--p:64;">
+          <div class="ring-inner">
+            <strong>DB</strong>
+            <span>64%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS" title="JavaScript">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node" title="Node">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker">
+      </div>
+    </section>
+
+    <!-- BOTTOM: Progress area -->
+    <section class="progress-bottom">
+      <div class="panel">
+        <h2>Proficiency</h2>
+        <p class="panel-sub">Progress bars show proficiency. (Pure CSS visual style; update inline variables to change values.)</p>
+
+        <div class="bars">
+
+          <div class="bar-row">
+            <div class="label">UI Design</div>
+            <div class="bar-wrap">
+              <div class="bar" style="--val:92%">
+                <div class="knob" style="--pos:92%"></div>
+              </div>
+              <div class="percent">92%</div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <div class="label">Product Design</div>
+            <div class="bar-wrap">
+              <div class="bar" style="--val:84%">
+                <div class="knob" style="--pos:84%"></div>
+              </div>
+              <div class="percent">84%</div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <div class="label">User Research</div>
+            <div class="bar-wrap">
+              <div class="bar" style="--val:88%">
+                <div class="knob" style="--pos:88%"></div>
+              </div>
+              <div class="percent">88%</div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <div class="label">Coding</div>
+            <div class="bar-wrap">
+              <div class="bar" style="--val:72%">
+                <div class="knob" style="--pos:72%"></div>
+              </div>
+              <div class="percent">72%</div>
+            </div>
+          </div>
+
+          <div class="bar-row">
+            <div class="label">No Code Tools</div>
+            <div class="bar-wrap">
+              <div class="bar" style="--val:66%">
+                <div class="knob" style="--pos:66%"></div>
+              </div>
+              <div class="percent">66%</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tools-card">
+          <div class="tools-head">Featured Tools</div>
+          <div class="tools-logos">
+            <img src="https://seeklogo.com/images/F/framer-logo-9A6B7B83A7-seeklogo.com.png" alt="Framer" title="Framer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Webflow_logo.svg" alt="Webflow" title="Webflow">
+            <img src="https://cdn.worldvectorlogo.com/logos/shopify-2.svg" alt="Shopify" title="Shopify">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" title="Figma">
+          </div>
+          <p class="tools-note">Prototyping, landing pages and design systems experience with these tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG MARQUEE ICONS (requested) -->
+    <marquee class="marquee-icons" behavior="scroll" direction="left" scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()" aria-hidden="false">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="js">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongo">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="docker">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="git">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="ts">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="graphql">
+    </marquee>
+
+    <!-- FOOTER: Created by RUCHITHA S S -->
+    <footer class="created-by">
+      CREATED BY <span class="author">RUCHITHA S S</span>
+    </footer>
+
+   
+  </main>
+</body>
+</html>

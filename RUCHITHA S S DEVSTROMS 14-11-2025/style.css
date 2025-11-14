@@ -1,0 +1,272 @@
+:root{
+  --bg-1: #041033;
+  --bg-2: #071845;
+  --card-bg: rgba(255,255,255,0.03);
+  --accent-a: #38bdf8; /* bright cyan */
+  --accent-b: #341568; /* violet */
+  --text: #e9f2ff;
+  --muted: rgba(233,242,255,0.9);
+  --panel-radius: 18px;
+}
+
+/* Make page fixed to viewport and disable scroll */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;           /* IMPORTANT — prevents page from moving/scrolling */
+  -webkit-user-select: none;  /* optional: prevent accidental text selection dragging */
+  -moz-user-select: none;
+  user-select: none;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  
+}
+
+/* page wrapper is pinned to viewport */
+.page{
+  position: fixed;   /* pin to viewport */
+  inset: 0;          /* top:0; right:0; bottom:0; left:0 */
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+/* header */
+.site-header{ text-align:center; margin-top:8px; pointer-events:none; } /* pointer-events none prevents mouse from moving focus when hovering header */
+.site-header h1{
+  margin:0;
+  color: #39ca60;
+  font-size: clamp(55px, 3.8vw, 72px);
+  letter-spacing:0.6px;
+}
+.site-header .sub{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:40px;
+}
+
+/* TOP: Skills area */
+.skills-top{
+  width:100%;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:60px;
+}
+
+/* rings layout larger and centered (increased size) */
+.rings{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:20px;
+  justify-items:center;
+  align-items:center;
+  max-width:1200px;
+}
+
+/* ring component  */
+.ring{
+  --size:190px; 
+  --p:70;
+  width:var(--size);
+  height:var(--size);
+  border-radius:50%;
+  padding:12px;
+  display:grid;
+  place-items:center;
+  position:relative;
+  /* ring progress using conic-gradient */
+  background:
+  conic-gradient(var(--accent-a) calc(var(--p) * 1%), rgba(255,255,255,0.06) 0 100%);
+  box-shadow: 0 22px 48px rgba(2,6,20,0.65);
+  border:1px solid rgba(255,255,255,0.05);
+  pointer-events:none; /* prevent mouse interactions that move focus */
+}
+
+/* inner circle with clearer text */
+.ring-inner{
+  width:calc(var(--size) - 58px);
+  height:calc(var(--size) - 58px);
+  border-radius:50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:var(--text);
+  font-weight:800;
+  text-shadow: 0 2px 8px rgba(3,6,20,0.6);
+  pointer-events:none;
+}
+.ring-inner strong{ font-size:20px; color:#fff; }
+.ring-inner span{ font-size:18px; color:var(--muted); }
+
+/* icons row under rings */
+.skill-icons{
+  width:100%;
+  display:flex;
+  gap:22px;
+  justify-content:center;
+  align-items:center;
+  margin-top:12px;
+  flex-wrap:wrap;
+  pointer-events:none;
+}
+.skill-icons img{
+  width:72px;  /* increased */
+  height:72px; /* increased */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding:8px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.04);
+  filter: drop-shadow(0 16px 36px rgba(0,0,0,0.6));
+}
+
+/* BOTTOM: Progress area — larger panel */
+.progress-bottom{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+.panel{
+  width:100%;
+  max-width:1200px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:28px; /* slightly larger */
+  border-radius:var(--panel-radius);
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 18px 60px rgba(2,8,30,0.6);
+  pointer-events:auto; /* we allow interactions inside panel (like hover effects) */
+}
+
+/* panel header */
+.panel h2{ margin:0; color:#bfe9ff; font-size:22px; }
+.panel-sub{ margin:8px 0 12px; color:var(--muted); font-size:15px; }
+
+/* bars layout bigger */
+.bars{ display:flex; flex-direction:column; gap:18px; margin-top:8px; }
+.bar-row{ display:flex; gap:20px; align-items:center; }
+.bar-row .label{
+  width:200px;
+  font-weight:800;
+  color:#dff3ff;
+  font-size:16px;
+}
+.bar-wrap{ flex:1; display:flex; gap:14px; align-items:center; }
+
+/* horizontal bar styles (larger height) */
+.bar{
+  --h:18px; /* increased */
+  height:var(--h);
+  width:100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:999px;
+  position:relative;
+  overflow:visible;
+  border:1px solid rgba(255,255,255,0.03);
+  pointer-events:none;
+}
+.bar::before{
+  content:'';
+  position:absolute; left:0; top:0; bottom:0;
+  width:var(--val,50%);
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  box-shadow: 0 14px 34px rgba(124,58,237,0.16);
+  transition: width 700ms cubic-bezier(.2,.9,.3,1);
+}
+.knob{
+  position:absolute; top:50%; left:var(--pos,50%);
+  transform:translate(-50%,-50%);
+  width:26px; height:26px; border-radius:50%;
+  background: linear-gradient(180deg,#ffffff,#dfeeff);
+  border:3px solid rgba(124,58,237,0.22);
+  box-shadow: 0 8px 20px rgba(3,6,20,0.6);
+}
+.percent{
+  width:72px; text-align:right; font-weight:900; color:#dff3ff; font-size:16px;
+}
+
+/* tools card at bottom of panel */
+.tools-card{
+  margin-top:20px;
+  padding:16px;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+  display:flex;
+  gap:18px;
+  align-items:center;
+  justify-content:space-between;
+  pointer-events:auto;
+}
+.tools-head{ font-weight:800; color:#e8fbff; }
+.tools-logos{ display:flex; gap:12px; align-items:center; }
+.tools-logos img{ width:56px; height:36px; object-fit:contain; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.45)); }
+.tools-note{ color:var(--muted); margin:0; font-size:14px; }
+
+/* MARQUEE styles (bigger icons) */
+.marquee-icons{
+  width:100%;
+  margin-top:18px;
+  padding:16px;
+  border-radius:12px;
+  background: rgba(255,255,255,0.02);
+  box-shadow: 0 8px 30px rgba(2,6,20,0.5);
+  border:1px solid rgba(255,255,255,0.03);
+  pointer-events:none; /* disable mouse interactions moving focus */
+}
+.marquee-icons img{
+  width:84px;    /* BIGGER */
+  height:84px;   /* BIGGER */
+  margin:0 20px;
+  vertical-align:middle;
+  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.6));
+  background: rgba(255,255,255,0.02);
+  padding:8px;
+  border-radius:12px;
+}
+
+
+.created-by{
+  margin-top:14px;
+  font-size:18px;
+  font-weight:800;
+  color: rgba(255,255,255,0.75);
+  letter-spacing:1.2px;
+  pointer-events:none;
+}
+.created-by .author{
+  color:#ffd95d;
+  margin-left:10px;
+  font-size:20px;
+}
+
+/* footer small tip */
+.footer-note{ color:rgba(255,255,255,0.35); margin-top:6px; font-size:13px; text-align:center; pointer-events:none; }
+
+/* responsive: scale down slightly so it always fits (no scrolling) */
+@media (max-width:1200px){
+  .rings{ grid-template-columns: repeat(4,1fr); }
+  .ring{ --size:150px; }
+  .skill-icons img{ width:64px; height:64px; }
+  .bar-row .label{ width:150px; font-size:14px; }
+  .marquee-icons img{ width:64px; height:64px; margin:0 12px; }
+}
+
+
+@media (max-width:720px){
+  .page{ transform: scale(0.85); transform-origin: top center; } /* scale entire UI so it fits viewport */
+}
+
+
